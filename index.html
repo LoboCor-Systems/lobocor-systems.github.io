@@ -1,65 +1,187 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#11191d">
-  <meta name="description" content="LoboCor Systems — independent games, software engineering, reverse-engineering research, and preservation projects.">
+  <meta name="theme-color" content="#d6f6ff">
+  <meta name="description" content="LoboCor Systems — independent games, software engineering, console research and preservation. Originals, engineering and Rebirth projects.">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="LoboCor Systems">
-  <meta property="og:description" content="Games, engineering, preservation. Independent projects from LoboCor Systems.">
-  <title>LoboCor Systems — Independent Games & Engineering</title>
-  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <meta property="og:title" content="LoboCor Systems — Games, Code & Rebirth">
+  <meta property="og:description" content="Independent games, software engineering and technical preservation. Explore LoboCor Systems.">
+  <meta property="og:url" content="https://lobocor-systems.github.io/">
+  <meta property="og:image" content="https://lobocor-systems.github.io/aero-world.webp">
+  <meta name="color-scheme" content="light">
+  <title>LoboCor Systems — Games, Code & Rebirth</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preload" as="image" href="aero-world.webp" type="image/webp">
   <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
 </head>
-<body>
-  <a class="skip-link" href="#work">Skip to projects</a>
+<body id="top">
+  <a class="skip-link" href="#projects">Skip to projects</a>
+  <svg aria-hidden="true" class="svg-definitions" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-7-7 7 7-7 7"/></symbol>
+    <symbol id="i-external" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></symbol>
+    <symbol id="i-code" viewBox="0 0 24 24"><path d="m8 6-6 6 6 6m8-12 6 6-6 6m-3-14-6 20"/></symbol>
+    <symbol id="i-game" viewBox="0 0 24 24"><path d="M6.5 8h11A4.5 4.5 0 0 1 22 12.5v3a3 3 0 0 1-5.1 2.1L14.4 15H9.6l-2.5 2.6A3 3 0 0 1 2 15.5v-3A4.5 4.5 0 0 1 6.5 8Z"/><path d="M7 10v6m-3-3h6m7-1h.01m2 2h.01"/></symbol>
+    <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M20 7v5h-5M4 17v-5h5"/><path d="M5.8 9a7 7 0 0 1 12.1-2L20 12M4 12l2.1 5A7 7 0 0 0 18.2 15"/></symbol>
+    <symbol id="i-orbit" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(-35 12 12)"/></symbol>
+    <symbol id="i-github" viewBox="0 0 24 24"><path d="M9 19c-4.4 1.5-4.4-2.5-6-3m12 6v-4a3.5 3.5 0 0 0-1-2.7c3.3-.4 6.8-1.6 6.8-7.3a5.7 5.7 0 0 0-1.5-4 5.3 5.3 0 0 0-.1-4S17 0 14.5 2.1a13.7 13.7 0 0 0-5 0C7 .1 4.8 0 4.8 0a5.3 5.3 0 0 0-.1 4A5.7 5.7 0 0 0 3.2 8c0 5.7 3.5 6.9 6.8 7.3A3.5 3.5 0 0 0 9 18v4" transform="translate(1 1) scale(.92)"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="m12 2 2.2 7.8L22 12l-7.8 2.2L12 22l-2.2-7.8L2 12l7.8-2.2L12 2Z"/></symbol>
+  </svg>
+
+  <div class="ambient" aria-hidden="true"><i class="ambient-orb orb-a"></i><i class="ambient-orb orb-b"></i><i class="ambient-orb orb-c"></i></div>
   <header class="site-header">
-    <div class="wrap bar">
-      <a class="brand" href="#top" aria-label="LoboCor Systems home"><span class="brand-mark" aria-hidden="true">LC<span class="slash">/</span></span><span class="brand-name">LOBOCOR<br><small>SYSTEMS</small></span></a>
-      <nav aria-label="Primary navigation"><a href="#work">Projects</a><a href="#approach">Approach</a><a href="#about">About</a><a class="header-link" href="https://lobocor-systems.itch.io/" target="_blank" rel="noopener">itch.io ↗</a></nav>
+    <div class="header-inner container">
+      <a class="brand" href="#top" aria-label="LoboCor Systems home">
+        <img src="lobocor-logo.png" alt="LoboCor Systems" width="1200" height="800">
+      </a>
+      <nav class="main-nav" aria-label="Main menu">
+        <a href="#projects">Projects</a>
+        <a href="#divisions">Divisions</a>
+        <a href="#studio">The studio</a>
+      </nav>
+      <a class="nav-action" href="https://github.com/LoboCor-Systems" target="_blank" rel="noopener noreferrer">GitHub <svg class="inline-icon" aria-hidden="true"><use href="#i-external"/></svg></a>
     </div>
   </header>
 
-  <main id="top">
-    <div class="hero-band"><section class="hero wrap" aria-labelledby="hero-title">
-      <div class="hero-text"><p class="eyebrow"><span class="pulse"></span> INDEPENDENT DEVELOPMENT / TECHNICAL RESEARCH</p>
-        <h1 id="hero-title">Games worth building.<br><em>Systems worth understanding.</em></h1>
-        <p class="intro">LoboCor Systems develops original games and software, explores the architecture of old and new systems, and documents ambitious restoration and preservation research.</p>
-        <div class="actions"><a class="primary" href="#work">Explore our projects <span aria-hidden="true">↗</span></a><a class="secondary" href="https://github.com/LoboCorSystems" target="_blank" rel="noopener">GitHub organization ↗</a></div>
+  <main>
+    <section class="hero container" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <div class="hero-kicker"><span class="kicker-dot"></span> INDEPENDENT DEVELOPMENT STUDIO</div>
+        <h1 id="hero-title">New worlds.<br><span class="highlight-blue">Old wonders.</span><br>Better systems.</h1>
+        <p class="hero-description">Games, software engineering, reverse engineering and digital preservation — brought together under one independent creative label.</p>
+        <div class="hero-actions">
+          <a class="button button-blue" href="#projects">Explore projects <svg class="inline-icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a class="button button-glass" href="https://lobocor-systems.itch.io/" target="_blank" rel="noopener noreferrer">Visit our itch.io <svg class="inline-icon" aria-hidden="true"><use href="#i-external"/></svg></a>
+        </div>
+        <div class="hero-signature"><span class="signature-pulse"></span> ORIGINALS <span class="signature-star">✦</span> ENGINEERING <span class="signature-star">✦</span> REBIRTH</div>
       </div>
-      <div class="hero-art" aria-hidden="true"><span class="orbit orbit-a"></span><span class="orbit orbit-b"></span><div class="monogram">L<span>C</span></div><div class="coordinates">SYS // DEV // 001<br>TECHNICAL WORKS</div></div>
-    </section></div>
-
-    <div class="separator"><div class="wrap separator-inner"><span>GAMES</span><span>SOFTWARE</span><span>RESEARCH</span><span>PRESERVATION</span></div></div>
-
-    <section class="section wrap" id="work"><div class="section-head"><div><p class="eyebrow">01 / THE PORTFOLIO</p><h2>Selected work</h2></div><p class="section-intro">Released titles, engineering prototypes and documented research. Each project is clearly marked by its current status.</p></div>
-      <div class="filters" role="group" aria-label="Filter projects"><button class="filter active" type="button" data-filter="all" aria-pressed="true">All work</button><button class="filter" type="button" data-filter="originals" aria-pressed="false">Originals</button><button class="filter" type="button" data-filter="engineering" aria-pressed="false">Engineering</button><button class="filter" type="button" data-filter="rebirth" aria-pressed="false">Rebirth / Research</button></div>
-      <div class="project-grid">
-        <article class="project" data-category="originals"><div class="project-top"><span class="category">ORIGINALS / TABLETOP</span><span class="status live">RELEASED</span></div><div class="project-initial">D<span>⁊</span>D</div><h3>Dunes ⁊ Demons</h3><p>A frontier-fantasy tabletop RPG built around danger, exploration and consequential decisions. Available in Imaginary and Imaginary Minus editions.</p><div class="project-bottom"><a href="https://lobocor-systems.itch.io/dunes-demons-imaginary" target="_blank" rel="noopener">Main edition ↗</a><a href="https://lobocor-systems.itch.io/dunes-demons-imaginary-minus" target="_blank" rel="noopener">Minus edition ↗</a></div></article>
-        <article class="project" data-category="originals"><div class="project-top"><span class="category">ORIGINALS / TABLETOP</span><span class="status live">RELEASED</span></div><div class="project-initial">A<span>♠</span></div><h3>Arcane Hold'em</h3><p>A tactical RPG card game where poker hands drive combat, party-building and progression.</p><div class="project-bottom"><a href="https://lobocor-systems.itch.io/arcane-holdem" target="_blank" rel="noopener">View on itch.io ↗</a></div></article>
-        <article class="project" data-category="originals"><div class="project-top"><span class="category">ORIGINALS / TABLETOP</span><span class="status live">RELEASED</span></div><div class="project-initial">E<span>Q</span></div><h3>Esperitz Quest</h3><p>A creature-taming dungeon RPG about survival, exploration, and volatile expeditions.</p><div class="project-bottom"><a href="https://lobocor-systems.itch.io/" target="_blank" rel="noopener">Browse releases ↗</a></div></article>
-        <article class="project" data-category="engineering"><div class="project-top"><span class="category">ENGINEERING / CROSS-DEVICE</span><span class="status work">PROTOTYPE</span></div><div class="project-initial">U<span>TB</span></div><h3>UniversalTouchBridge</h3><p>A Windows and Android bridge for delivering tablet touch input to a desktop operating system, including multi-touch injection and monitor mapping.</p><div class="project-bottom"><span class="pending">Source and documentation pending</span></div></article>
-        <article class="project" data-category="engineering"><div class="project-top"><span class="category">ENGINEERING / DEVELOPER TOOLS</span><span class="status work">IN DEVELOPMENT</span></div><div class="project-initial">A<span>V</span></div><h3>AstraVMM</h3><p>Model orchestration experiments for development workflows, with routing, usage-aware controls and multi-provider integration.</p><div class="project-bottom"><span class="pending">Repository under preparation</span></div></article>
-        <article class="project" data-category="engineering"><div class="project-top"><span class="category">ENGINEERING / HOMEBREW</span><span class="status work">RESEARCH</span></div><div class="project-initial">A<span>M</span></div><h3>AMUN</h3><p>Research into achievement recognition and compatible telemetry on legacy consoles and emulators.</p><div class="project-bottom"><span class="pending">Technical notes planned</span></div></article>
-        <article class="project" data-category="rebirth"><div class="project-top"><span class="category">REBIRTH / PRESERVATION</span><span class="status work">IN DEVELOPMENT</span></div><div class="project-initial">C<span>R</span></div><h3>Crash Bandicoot Rebirth</h3><p>An independent technical research project studying the architecture, behavior and preservation of classic PlayStation software.</p><div class="project-bottom"><span class="pending">Unofficial fan research; no game assets distributed</span></div></article>
-        <article class="project" data-category="rebirth"><div class="project-top"><span class="category">REBIRTH / CONSOLE RESEARCH</span><span class="status planned">PROPOSED</span></div><div class="project-initial">L<span>L</span></div><h3>LoboLoader</h3><p>A proposed independent study of PS5 WebKit autoloading workflows, reliability, and associated interfaces.</p><div class="project-bottom"><span class="pending">Technical documentation planned</span></div></article>
-        <article class="project" data-category="rebirth"><div class="project-top"><span class="category">REBIRTH / CONSOLE RESEARCH</span><span class="status planned">PROPOSED</span></div><div class="project-initial">L<span>5</span></div><h3>Lobo5 Library</h3><p>A proposed independent catalog and launcher interface study, emphasizing usability, architecture and interoperability.</p><div class="project-bottom"><span class="pending">Technical documentation planned</span></div></article>
+      <div class="hero-visual">
+        <div class="hero-picture"><img src="aero-world.webp" alt="LoboCor Systems chrome-blue logo in a bright sky, glass-and-water landscape" width="1254" height="1254"></div>
+        <div class="hero-shine" aria-hidden="true"></div>
+        <div class="hero-picture-tag"><span class="tiny-orb"></span> A BRIGHTER WORLD OF POSSIBILITIES</div>
       </div>
     </section>
 
-    <section class="statement" id="approach"><div class="wrap statement-inner"><p class="eyebrow">02 / THE APPROACH</p><h2>Publish the work.<br><em>Document the method.</em></h2><div class="pillars"><div><strong>01 — Make</strong><p>Original releases and practical tools that people can actually use.</p></div><div><strong>02 — Examine</strong><p>Careful study of existing systems and transparent engineering notes.</p></div><div><strong>03 — Preserve</strong><p>Technical knowledge, compatibility insights and legally distributable modifications.</p></div></div></div></section>
-    <section class="section wrap about" id="about"><div><p class="eyebrow">03 / THE STUDIO</p><h2>Independent by design.</h2></div><div><p>LoboCor Systems is an independent development label working across tabletop game design, software engineering, homebrew research, and interactive systems.</p><p>The GitHub organization hosts technical documentation and projects that are ready for public development. Our itch.io catalog carries released games and commercial publications.</p><p class="disclaimer">Unofficial research projects are not affiliated with or endorsed by the original platform owners, developers, or rights holders. Referenced trademarks remain the property of their owners.</p><div class="actions"><a class="primary" href="https://lobocor-systems.itch.io/" target="_blank" rel="noopener">Browse published work ↗</a><a class="secondary secondary-dark" href="https://github.com/LoboCorSystems" target="_blank" rel="noopener">Explore code ↗</a></div></div></section>
+    <div class="horizon container" aria-hidden="true"><div class="horizon-line"></div><span>✦</span><div class="horizon-line"></div></div>
+
+    <section class="divisions-section container" id="divisions" aria-labelledby="divisions-title">
+      <div class="section-heading centered"><p class="eyebrow">THREE WORLDS. ONE STUDIO.</p><h2 id="divisions-title">Made to <span>explore.</span></h2><p>From complete original worlds to tools that push existing systems further.</p></div>
+      <div class="division-grid">
+        <a class="division glass-card" href="#projects" data-jump-filter="originals">
+          <span class="division-icon blue"><svg aria-hidden="true"><use href="#i-game"/></svg></span>
+          <span class="division-label">01 / ORIGINALS</span>
+          <strong>Play something new.</strong>
+          <span>Original games, tabletop worlds and experimental mechanics.</span>
+          <span class="division-more">Browse originals <svg class="inline-icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+        </a>
+        <a class="division glass-card" href="#projects" data-jump-filter="engineering">
+          <span class="division-icon mint"><svg aria-hidden="true"><use href="#i-code"/></svg></span>
+          <span class="division-label">02 / ENGINEERING</span>
+          <strong>Understand. Improve.</strong>
+          <span>Systems software, development tools and inventive integrations.</span>
+          <span class="division-more">Explore engineering <svg class="inline-icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+        </a>
+        <a class="division glass-card" href="#projects" data-jump-filter="rebirth">
+          <span class="division-icon purple"><svg aria-hidden="true"><use href="#i-refresh"/></svg></span>
+          <span class="division-label">03 / REBIRTH</span>
+          <strong>Keep history alive.</strong>
+          <span>Reverse engineering, game restoration studies and preservation.</span>
+          <span class="division-more">Discover Rebirth <svg class="inline-icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+        </a>
+      </div>
+    </section>
+
+    <section class="work-section" id="projects" aria-labelledby="projects-title">
+      <div class="container">
+        <div class="work-header"><div><p class="eyebrow">THE PORTFOLIO</p><h2 id="projects-title">Projects <span>&amp; experiments.</span></h2></div><p>Real releases, working prototypes and longer-term technical research. Every project is marked by its current stage.</p></div>
+        <div class="filter-bar" role="group" aria-label="Filter projects">
+          <button type="button" class="filter active" data-filter="all" aria-pressed="true">All projects <span class="filter-count">9</span></button>
+          <button type="button" class="filter" data-filter="originals" aria-pressed="false">Originals</button>
+          <button type="button" class="filter" data-filter="engineering" aria-pressed="false">Engineering</button>
+          <button type="button" class="filter" data-filter="rebirth" aria-pressed="false">Rebirth</button>
+        </div>
+        <div class="projects-grid">
+          <article class="project-card glass-card" data-category="originals">
+            <div class="card-top"><span class="project-type">ORIGINALS · TABLETOP RPG</span><span class="status status-release">RELEASED</span></div>
+            <div class="project-symbol symbol-sand" aria-hidden="true"><span>D<span class="ornament">⁊</span>D</span></div>
+            <h3>Dunes ⁊ Demons</h3>
+            <p>Dangerous expeditions, consequential decisions and a frontier-fantasy tabletop world.</p>
+            <a class="card-link" href="https://lobocor-systems.itch.io/dunes-demons-imaginary" target="_blank" rel="noopener noreferrer">Explore the game <svg class="inline-icon" aria-hidden="true"><use href="#i-external"/></svg></a>
+          </article>
+          <article class="project-card glass-card" data-category="originals">
+            <div class="card-top"><span class="project-type">ORIGINALS · CARD RPG</span><span class="status status-release">RELEASED</span></div>
+            <div class="project-symbol symbol-lilac" aria-hidden="true"><span>A<span class="ornament">♠</span></span></div>
+            <h3>Arcane Hold'em</h3>
+            <p>Card-driven tactical play, party building and the thrill of a poker hand.</p>
+            <a class="card-link" href="https://lobocor-systems.itch.io/arcane-holdem" target="_blank" rel="noopener noreferrer">Explore the game <svg class="inline-icon" aria-hidden="true"><use href="#i-external"/></svg></a>
+          </article>
+          <article class="project-card glass-card" data-category="originals">
+            <div class="card-top"><span class="project-type">ORIGINALS · ADVENTURE</span><span class="status status-release">RELEASED</span></div>
+            <div class="project-symbol symbol-meadow" aria-hidden="true"><span>E<span class="ornament">Q</span></span></div>
+            <h3>Esperitz Quest</h3>
+            <p>Creature-taming dungeon exploration, survival and volatile adventures.</p>
+            <a class="card-link" href="https://lobocor-systems.itch.io/" target="_blank" rel="noopener noreferrer">Find on itch.io <svg class="inline-icon" aria-hidden="true"><use href="#i-external"/></svg></a>
+          </article>
+          <article class="project-card glass-card" data-category="engineering">
+            <div class="card-top"><span class="project-type">ENGINEERING · CROSS-DEVICE</span><span class="status status-active">WORKING PROTOTYPE</span></div>
+            <div class="project-symbol symbol-ocean" aria-hidden="true"><svg><use href="#i-orbit"/></svg></div>
+            <h3>UniversalTouchBridge</h3>
+            <p>Turn an Android tablet into a touch-enabled Windows display through a custom multi-touch bridge.</p>
+            <div class="card-link quiet-link">Public release in preparation</div>
+          </article>
+          <article class="project-card glass-card" data-category="engineering">
+            <div class="card-top"><span class="project-type">ENGINEERING · DEVELOPER TOOLS</span><span class="status status-active">IN DEVELOPMENT</span></div>
+            <div class="project-symbol symbol-blue" aria-hidden="true"><svg><use href="#i-code"/></svg></div>
+            <h3>AstraVMM</h3>
+            <p>Model routing and orchestration for development workflows, with usage controls and provider integrations.</p>
+            <div class="card-link quiet-link">Private development</div>
+          </article>
+          <article class="project-card glass-card" data-category="engineering">
+            <div class="card-top"><span class="project-type">ENGINEERING · CONSOLE TOOLS</span><span class="status status-active">IN DEVELOPMENT</span></div>
+            <div class="project-symbol symbol-mint" aria-hidden="true"><span>L<span class="ornament">5</span></span></div>
+            <h3>LOBO5 Library</h3>
+            <p>Independent PS5-oriented library and archive tooling, with a focus on reliability and usability.</p>
+            <div class="card-link quiet-link">Private development</div>
+          </article>
+          <article class="project-card glass-card" data-category="rebirth">
+            <div class="card-top"><span class="project-type">REBIRTH · PLAYSTATION RESEARCH</span><span class="status status-active">IN DEVELOPMENT</span></div>
+            <div class="project-symbol symbol-sun" aria-hidden="true"><svg><use href="#i-refresh"/></svg></div>
+            <h3>Crash Bandicoot Rebirth</h3>
+            <p>Technical research into the architecture, prototypes and restoration of a classic PlayStation game.</p>
+            <div class="card-link quiet-link">Unofficial research · Private repository</div>
+          </article>
+          <article class="project-card glass-card" data-category="rebirth">
+            <div class="card-top"><span class="project-type">REBIRTH · CONSOLE RESEARCH</span><span class="status status-research">RESEARCH</span></div>
+            <div class="project-symbol symbol-sky" aria-hidden="true"><svg><use href="#i-spark"/></svg></div>
+            <h3>WebKit Autoloader</h3>
+            <p>Experiments in automated homebrew launch flows, resilience and development tooling.</p>
+            <div class="card-link quiet-link">Research and documentation in progress</div>
+          </article>
+          <article class="project-card glass-card" data-category="rebirth">
+            <div class="card-top"><span class="project-type">REBIRTH · PRESERVATION</span><span class="status status-research">EXPLORATORY</span></div>
+            <div class="project-symbol symbol-rose" aria-hidden="true"><svg><use href="#i-refresh"/></svg></div>
+            <h3>Project R3B1R7H</h3>
+            <p>A growing collection of restoration concepts and independent studies of older games.</p>
+            <div class="card-link quiet-link">Additional studies planned</div>
+          </article>
+        </div>
+        <p class="projects-note">Unofficial research is independent of original publishers and platform holders. No copyrighted game assets or proprietary binaries are offered here.</p>
+      </div>
+    </section>
+
+    <section class="studio-section container" id="studio" aria-labelledby="studio-title">
+      <div class="studio-panel glass-card">
+        <div class="studio-mark"><img loading="lazy" src="lobocor-logo.png" alt="LoboCor Systems blue glass logo" width="1200" height="800"></div>
+        <div class="studio-content"><p class="eyebrow">MEET LOBOCOR SYSTEMS</p><h2 id="studio-title">Independent spirit.<br><span>Boundless curiosity.</span></h2><p>We work where original game design meets technical curiosity: building our own experiences, writing useful software, and investigating how the games and machines we grew up with actually work.</p><p>Our published games live on itch.io. Public code, tools and research belong on GitHub as they become ready to share.</p>
+          <div class="studio-actions"><a href="https://github.com/LoboCor-Systems" target="_blank" rel="noopener noreferrer">GitHub organization <svg class="inline-icon" aria-hidden="true"><use href="#i-external"/></svg></a><a href="https://lobocor-systems.itch.io/" target="_blank" rel="noopener noreferrer">itch.io storefront <svg class="inline-icon" aria-hidden="true"><use href="#i-external"/></svg></a></div>
+        </div>
+      </div>
+    </section>
   </main>
-  <footer><div class="wrap foot"><span class="footer-brand">LOBOCOR<span> / </span>SYSTEMS</span><span>Independent games, software &amp; technical research.</span><a href="https://lobocor-systems.itch.io/">itch.io ↗</a></div></footer>
-  <script>
-  const controls = document.querySelectorAll('[data-filter]');
-  const projects = document.querySelectorAll('[data-category]');
-  controls.forEach(button => button.addEventListener('click', () => {
-    const selected = button.dataset.filter;
-    controls.forEach(control => { const on = control === button; control.classList.toggle('active', on); control.setAttribute('aria-pressed', String(on)); });
-    projects.forEach(project => { project.hidden = selected !== 'all' && project.dataset.category !== selected; });
-  }));
-  </script>
+  <footer class="site-footer">
+    <div class="container footer-inner"><div class="footer-brand"><img src="lobocor-logo.png" alt="" width="1200" height="800"><span>© <span id="year">2026</span> LoboCor Systems. Independent creations, engineering &amp; research.</span></div><div class="footer-links"><a href="#top">Back to top ↑</a><a href="https://github.com/LoboCor-Systems" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a href="https://lobocor-systems.itch.io/" target="_blank" rel="noopener noreferrer">itch.io ↗</a></div></div>
+  </footer>
 </body>
 </html>
