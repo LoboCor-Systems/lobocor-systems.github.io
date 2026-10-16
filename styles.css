@@ -266,3 +266,12 @@ a.card-link:hover { color:#004c89; text-decoration: underline; text-underline-of
 @media (prefers-reduced-motion: reduce) {
   *,*::before,*::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
 }
+
+/* Branded official publication identity and multi-store buttons */
+.project-seal{margin-top:auto;margin-bottom:12px}
+.identity-seal{display:inline-flex;align-items:center;gap:5px;border:1px solid rgba(18,143,204,.35);border-radius:999px;padding:7px 10px;background:linear-gradient(135deg,#f7feff,#cdefff,#a6e1ff);color:#045781;font-size:10px;font-weight:900;letter-spacing:.05em;box-shadow:inset 0 1px 0 #fff,0 2px 8px rgba(35,143,211,.12)}
+.store-links{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:2px}
+.store-links a{display:inline-flex;padding:9px 12px;border-radius:13px;background:linear-gradient(180deg,#f7ffff,#c9edff);border:1px solid #8bcde9;color:#08638e;font-size:12px;font-weight:800;box-shadow:inset 0 1px 0 white,0 2px 5px rgba(7,92,157,.1)}
+.store-links a:hover{background:linear-gradient(#fff,#a9e6ff);color:#035580;transform:translateY(-1px)}
+.store-links .store-pending{font-size:11px;color:#678394;padding:5px 0}
+.fan-disclaimer{display:block;margin-top:12px;line-height:1.5;color:#627e8d;font-size:11px}
