@@ -135,7 +135,7 @@ h2 span { color: #11a3c4; }
 .status-release { color: #126847; background: #d9f7e7; border: 1px solid #a8eaca; }
 .status-active { color: #075c9a; background: #d9f0ff; border: 1px solid #b3dffe; }
 .status-research { color: #6a5b9f; background: #eae7ff; border: 1px solid #d5cef8; }
-.project-symbol { width: 67px; height: 67px; display: flex; align-items: center; justify-content: center; border-radius: 21px; border: 1px solid rgba(255,255,255,.96); margin: 22px 0 15px; box-shadow: inset 0 3px 5px rgba(255,255,255,.82), 0 7px 15px rgba(25,107,157,.1); color:#065ca7; }
+.project-symbol { width: 72px; height: 72px; flex: none; display: flex; align-items: center; justify-content: center; border-radius: 21px; border: 1px solid rgba(255,255,255,.96); margin: 22px 0 15px; box-shadow: inset 0 3px 5px rgba(255,255,255,.82), 0 7px 15px rgba(25,107,157,.1); color:#065ca7; }
 .project-symbol > span { font: 850 30px/1 "Trebuchet MS",sans-serif; letter-spacing: -.07em; }
 .project-symbol .ornament { color:#44accd; font-size: .72em; }
 .project-symbol svg { width: 34px; height: 34px; }
@@ -300,60 +300,59 @@ a.card-link:hover { color:#004c89; text-decoration: underline; text-underline-of
   font-weight:900;
   letter-spacing:-.06em;
 }
-/* Simple editorial links rather than pills, buttons or link badges. */
-.store-links {
-  display:flex;
-  align-items:center;
-  gap:8px 0;
-  flex-wrap:wrap;
-  border-top:1px solid rgba(30,135,181,.15);
-  padding-top:12px;
-}
-.store-links a {
-  display:inline-flex;
-  align-items:center;
-  gap:3px;
-  background:transparent;
-  color:#086f9e;
-  font-size:12px;
-  font-weight:750;
-  line-height:1.7;
-  padding:0;
-  border:0;
-  border-radius:0;
-  text-decoration:none;
-  box-shadow:none;
-  transform:none;
-  transition:color .18s ease, text-decoration-color .18s ease;
-  text-underline-offset:3px;
-}
-.store-links a + a:before {
-  content:"·";
-  color:#a2c7d6;
-  padding-inline:10px;
-  font-weight:500;
-  text-decoration:none;
-}
-.store-links a:hover, .store-links a:focus-visible {
-  color:#00446f;
-  text-decoration:underline;
-}
-.store-links a:focus-visible {outline:2px solid #278ed0;outline-offset:3px;}
 .fan-disclaimer { display:block; margin-top:12px; line-height:1.5; color:#627e8d; font-size:11px; }
-/* Thin bevel on the AMUN mark, derived from the 3DS dual-screen silhouette. */
-.amun-device span { position:relative; }
-.amun-device:after {
-  content:"";
-  position:absolute;
-  width:40px;
-  height:6px;
-  border-radius:3px;
-  background:rgba(23,130,184,.22);
-  bottom:13px;
-  box-shadow:inset 0 1px 2px rgba(255,255,255,.8);
+
+/* Project marks: hand-drawn multicolour icons that scale with the tile */
+.project-symbol svg.pi { width: 52px; height: 52px; fill: none; stroke: none; filter: drop-shadow(0 2px 2px rgba(10,70,120,.18)); }
+.sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+
+/* Store badges: each store keeps its own brand colour and glyph */
+.store-links {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  border-top: 1px solid rgba(30,135,181,.15);
+  padding-top: 13px;
+  min-width: 0;
 }
-@media (max-width:590px) {
-  .store-links { column-gap:0; }
-  .store-links a { font-size:12px; }
-  .store-links a + a:before { padding-inline:8px; }
+.store-badge {
+  --badge-bg: #1b6c97;
+  --badge-fg: #fff;
+  --badge-edge: rgba(0,0,0,.22);
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  max-width: 100%;
+  min-height: 34px;
+  padding: 6px 11px 6px 9px;
+  border-radius: 11px;
+  border: 1px solid var(--badge-edge);
+  background: linear-gradient(180deg, rgba(255,255,255,.28) 0%, rgba(255,255,255,0) 52%, rgba(0,0,0,.07) 100%), var(--badge-bg);
+  color: var(--badge-fg);
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: .005em;
+  white-space: nowrap;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.4), 0 2px 6px rgba(15,70,110,.16);
+  transition: transform .18s ease, box-shadow .18s ease, filter .18s ease;
+}
+.store-badge:hover, .store-badge:focus-visible { transform: translateY(-2px); filter: brightness(1.07); box-shadow: inset 0 1px 0 rgba(255,255,255,.45), 0 6px 14px rgba(15,70,110,.24); }
+.store-badge:focus-visible { outline: 3px solid #006abf; outline-offset: 3px; }
+.store-badge .store-icon { width: 18px; height: 18px; flex: none; }
+.store-badge .store-out { width: 12px; height: 12px; opacity: .72; margin-left: 1px; }
+/* itch.io #FA5C5C · Steam #171A21 · Amazon #FF9900 · DriveThruRPG red */
+.store-itch { --badge-bg: #fa5c5c; --badge-fg: #2b0707; --badge-edge: #d94141; }
+.store-steam { --badge-bg: #171a21; --badge-fg: #fff; --badge-edge: #2a475e; background: linear-gradient(180deg, rgba(102,192,244,.22) 0%, rgba(255,255,255,0) 55%), linear-gradient(90deg, #1b2838, #171a21); }
+.store-steam .store-icon { color: #66c0f4; }
+.store-amazon { --badge-bg: #ff9900; --badge-fg: #131921; --badge-edge: #cc7a00; }
+.store-drivethru { --badge-bg: #b5232b; --badge-fg: #fff; --badge-edge: #8a1118; }
+@media (max-width: 590px) {
+  .store-links { gap: 8px; }
+  .store-badge { min-height: 38px; font-size: 12.5px; }
+}
+@media (max-width: 360px) {
+  .store-badge { padding-inline: 8px; gap: 6px; }
+  .store-badge .store-out { display: none; }
 }
