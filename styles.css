@@ -267,11 +267,93 @@ a.card-link:hover { color:#004c89; text-decoration: underline; text-underline-of
   *,*::before,*::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
 }
 
-/* Branded official publication identity and multi-store buttons */
-.project-seal{margin-top:auto;margin-bottom:12px}
-.identity-seal{display:inline-flex;align-items:center;gap:5px;border:1px solid rgba(18,143,204,.35);border-radius:999px;padding:7px 10px;background:linear-gradient(135deg,#f7feff,#cdefff,#a6e1ff);color:#045781;font-size:10px;font-weight:900;letter-spacing:.05em;box-shadow:inset 0 1px 0 #fff,0 2px 8px rgba(35,143,211,.12)}
-.store-links{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:2px}
-.store-links a{display:inline-flex;padding:9px 12px;border-radius:13px;background:linear-gradient(180deg,#f7ffff,#c9edff);border:1px solid #8bcde9;color:#08638e;font-size:12px;font-weight:800;box-shadow:inset 0 1px 0 white,0 2px 5px rgba(7,92,157,.1)}
-.store-links a:hover{background:linear-gradient(#fff,#a9e6ff);color:#035580;transform:translateY(-1px)}
-.store-links .store-pending{font-size:11px;color:#678394;padding:5px 0}
-.fan-disclaimer{display:block;margin-top:12px;line-height:1.5;color:#627e8d;font-size:11px}
+/* Portfolio identity: a subtle publisher signature, not a promotional badge. */
+.project-seal {
+  margin-top:auto;
+  padding-top:12px;
+  padding-bottom:10px;
+}
+.publisher-signature {
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  max-width:100%;
+  color:#537b91;
+  font-size:11px;
+  font-weight:500;
+  line-height:1.35;
+  letter-spacing:.005em;
+}
+.publisher-signature strong { color:#24698e; font-weight:750; }
+.publisher-monogram {
+  display:inline-grid;
+  place-items:center;
+  flex:0 0 24px;
+  width:24px;
+  height:24px;
+  border-radius:8px;
+  border:1px solid rgba(31,154,212,.33);
+  background:linear-gradient(145deg,rgba(255,255,255,.98),rgba(200,237,252,.9) 55%,rgba(132,199,239,.62));
+  box-shadow:inset 0 1px 1px #fff,0 1px 3px rgba(26,114,161,.1);
+  color:#0b78aa;
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:-.06em;
+}
+/* Simple editorial links rather than pills, buttons or link badges. */
+.store-links {
+  display:flex;
+  align-items:center;
+  gap:8px 0;
+  flex-wrap:wrap;
+  border-top:1px solid rgba(30,135,181,.15);
+  padding-top:12px;
+}
+.store-links a {
+  display:inline-flex;
+  align-items:center;
+  gap:3px;
+  background:transparent;
+  color:#086f9e;
+  font-size:12px;
+  font-weight:750;
+  line-height:1.7;
+  padding:0;
+  border:0;
+  border-radius:0;
+  text-decoration:none;
+  box-shadow:none;
+  transform:none;
+  transition:color .18s ease, text-decoration-color .18s ease;
+  text-underline-offset:3px;
+}
+.store-links a + a:before {
+  content:"·";
+  color:#a2c7d6;
+  padding-inline:10px;
+  font-weight:500;
+  text-decoration:none;
+}
+.store-links a:hover, .store-links a:focus-visible {
+  color:#00446f;
+  text-decoration:underline;
+}
+.store-links a:focus-visible {outline:2px solid #278ed0;outline-offset:3px;}
+.fan-disclaimer { display:block; margin-top:12px; line-height:1.5; color:#627e8d; font-size:11px; }
+/* Thin bevel on the AMUN mark, derived from the 3DS dual-screen silhouette. */
+.amun-device span { position:relative; }
+.amun-device:after {
+  content:"";
+  position:absolute;
+  width:40px;
+  height:6px;
+  border-radius:3px;
+  background:rgba(23,130,184,.22);
+  bottom:13px;
+  box-shadow:inset 0 1px 2px rgba(255,255,255,.8);
+}
+@media (max-width:590px) {
+  .store-links { column-gap:0; }
+  .store-links a { font-size:12px; }
+  .store-links a + a:before { padding-inline:8px; }
+}
