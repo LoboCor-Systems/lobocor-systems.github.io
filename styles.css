@@ -46,16 +46,17 @@ h1,h2,h3,p { margin-top: 0; }
 
 /* Transparent polished desktop navigation */
 .site-header { position: relative; z-index: 20; padding-top: 16px; }
-.header-inner { display: flex; align-items: center; gap: 20px; min-height: 82px; }
+.header-inner { position: relative; display: flex; align-items: center; gap: 20px; min-height: 82px; width: min(1200px, calc(100% - 36px)); max-width: none; margin-inline: auto; padding-inline: 18px; }
 .header-inner::before {
   content: ""; pointer-events: none; position: absolute; z-index: -1;
-  top: 16px; left: max(18px, calc((100vw - 1200px) / 2)); right: max(18px, calc((100vw - 1200px) / 2)); height: 82px;
+  inset: 0;
   border-radius: 24px; border: 1px solid rgba(255,255,255,.9);
   background: linear-gradient(180deg, rgba(255,255,255,.9), rgba(229,251,255,.63) 49%, rgba(179,224,249,.49) 52%, rgba(255,255,255,.69));
   box-shadow: 0 7px 25px rgba(20,121,179,.13), inset 0 1px 2px #fff;
   backdrop-filter: blur(16px);
 }
 .brand { display: inline-flex; align-items: center; width: 188px; height: 76px; flex-shrink: 0; justify-content: center; }
+.nav-action { flex: none; }
 .brand img { height: 73px; width: auto; max-width: 185px; object-fit: contain; filter: drop-shadow(0 2px 5px rgba(15,123,204,.12)); }
 .main-nav { display: flex; align-items: center; gap: 10px; margin-left: auto; }
 .main-nav a { font-size: 14px; font-weight: 750; color: #275c82; padding: 10px 13px; border-radius: 12px; white-space: nowrap; }
@@ -178,6 +179,7 @@ a.card-link:hover { color:#004c89; text-decoration: underline; text-underline-of
 
 @media (max-width: 1080px) {
   .container { padding-inline: 24px; }
+  .header-inner { gap: 12px; }
   .hero { gap: 24px; }
   .hero h1 { font-size: clamp(43px,5.2vw,61px); }
   .hero-description { font-size: 16px; }
@@ -189,8 +191,7 @@ a.card-link:hover { color:#004c89; text-decoration: underline; text-underline-of
 }
 @media (max-width: 800px) {
   .container { padding-inline: 20px; }
-  .header-inner { min-height: 70px; }
-  .header-inner::before { top: 16px; height: 74px; left: 10px; right: 10px; }
+  .header-inner { min-height: 74px; width: calc(100% - 20px); padding-inline: 12px; gap: 8px; }
   .brand { width: 138px; height: 65px; }
   .brand img { height: 60px; }
   .main-nav { gap: 0; }
@@ -216,8 +217,8 @@ a.card-link:hover { color:#004c89; text-decoration: underline; text-underline-of
   html { scroll-padding-top: 28px; }
   .container { padding-inline: 16px; }
   .site-header { padding-top: 7px; }
-  .header-inner { flex-wrap: wrap; justify-content: space-between; row-gap: 0; padding-top: 3px; }
-  .header-inner::before { left: 7px; right: 7px; top: 7px; height: 113px; border-radius: 18px; }
+  .header-inner { flex-wrap: wrap; justify-content: space-between; row-gap: 0; padding: 3px 12px 6px; width: calc(100% - 14px); min-height: 0; }
+  .header-inner::before { border-radius: 18px; }
   .brand { height: 57px; width: 128px; justify-content: flex-start; }
   .brand img { height: 55px; }
   .nav-action { margin-left: auto; padding: 8px 10px; }
