@@ -1,9 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
 <defs>
-  <linearGradient id="g" x2=".2" y2="1"><stop stop-color="#efffff"/><stop offset=".34" stop-color="#61dfff"/><stop offset=".7" stop-color="#008ed9"/><stop offset="1" stop-color="#114ac5"/></linearGradient>
-  <linearGradient id="s" x2="0" y2="1"><stop stop-color="#fff" stop-opacity=".9"/><stop offset="1" stop-color="#fff" stop-opacity=".05"/></linearGradient>
+  <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#e8f9ff"/><stop offset="1" stop-color="#8ed0fa"/></linearGradient>
+  <linearGradient id="hx" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#b9f0ff"/><stop offset=".45" stop-color="#1b9ee6"/><stop offset="1" stop-color="#0a56b8"/></linearGradient>
+  <radialGradient id="gl" cx=".35" cy=".3" r=".8"><stop stop-color="#9ff0ff"/><stop offset=".55" stop-color="#1d8fe0"/><stop offset="1" stop-color="#0a5cb8"/></radialGradient>
 </defs>
-<rect x="3" y="3" width="58" height="58" rx="16" fill="url(#g)" stroke="#c3faff" stroke-width="3"/>
-<path d="M13 42 25 19l9 23 9-23 8 23" fill="none" stroke="#fff" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M9 13Q32-4 55 13v9Q32 10 9 22Z" fill="url(#s)"/>
+<rect x="1.5" y="1.5" width="61" height="61" rx="14" fill="url(#bg)" stroke="#fff" stroke-width="2"/>
+<path d="M32 8.5 46 17v30L32 55.5 18 47V17Z" fill="url(#hx)" stroke="#0b5fb5" stroke-width="1.2" stroke-linejoin="round"/>
+<path d="M32 15.5 39.5 20v24L32 48.5 24.5 44V20Z" fill="#dff6ff" stroke="#0b5fb5" stroke-width="1" stroke-linejoin="round"/>
+<circle cx="32" cy="31" r="7.2" fill="url(#gl)"/>
+<path d="M27.5 28.5c2-2.6 4.6-1.6 5.6.4s-1 2.8-.6 4.6-2.8.6-3.6-1.4-2.2-1.8-1.4-3.6Z" fill="#6fd16f" opacity=".9"/>
+<path d="M24.5 38c4 2 10 .8 15-2.5" fill="none" stroke="#fff" stroke-width="1.2" stroke-linecap="round" opacity=".9"/>
+<path d="M22 14Q32 9 42 14" fill="none" stroke="#fff" stroke-width="1.4" stroke-linecap="round" opacity=".55"/>
 </svg>
